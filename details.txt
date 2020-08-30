@@ -1,0 +1,14 @@
+DATE STARTED - 30/8/2020 3:45 PM
+
+
+01 Sort Algorithms
+02 Lists
+03 Stacks
+04 Queues
+05 Hashtables
+06 Search Algorithms
+07 Trees
+08 Heaps
+
+
+WILL FINISH ALL THIS TOPICS BY - 31/08/02 10:00 PM
