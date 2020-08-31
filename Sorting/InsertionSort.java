@@ -8,6 +8,8 @@
 //O(n2) Quadratic
 //Stable algo
 
+//Involves a lot of shifting
+//Useful when most of elements are already in correct position and only afew are unsorted.
 
 import java.util.*;
 
