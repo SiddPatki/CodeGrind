@@ -8,57 +8,57 @@ class QuickSort{
 	public static void main(String args[]){
 		
 		int[] arr = {20, 35, -15, 7, 55, 1, -22};
-		int low = 0;
-		int high = arr.length;
-		quickSort(arr, low, high-1);
+		int start = 0;
+		int end = arr.length;
+		quickSort(arr, start, end-1);
 		
 		System.out.println(Arrays.toString(arr));	
 		
 		
 	}
-	static int partition(int arr[], int low, int high) 
+	static int partition(int arr[], int start, int end) 
 	{ 
-		int pivot = arr[high];  
-		int i = (low-1); // index of smaller element 
-		for (int j=low; j<high; j++) 
+		int pivot = arr[end];  
+		int pIndex = start; // index of smaller element 
+		for (int i=start; i<end; i++) 
 		{ 
 			// If current element is smaller than the pivot 
-			if (arr[j] < pivot) 
+			if (arr[i] <= pivot) 
 			{ 
-				i++; 
-
-				// swap arr[i] and arr[j] 
-				int temp = arr[i]; 
-				arr[i] = arr[j]; 
-				arr[j] = temp; 
+				// swap arr[pIndex] and arr[i] 
+				int temp = arr[pIndex]; 
+				arr[pIndex] = arr[i]; 
+				arr[i] = temp; 
+				
+				pIndex++; 
 			} 
 		} 
 
-		// swap arr[i+1] and arr[high] (or pivot) 
-		int temp = arr[i+1]; 
-		arr[i+1] = arr[high]; 
-		arr[high] = temp; 
+		// swap arr[pIndex+1] and arr[end] (or pivot) 
+		int temp = arr[pIndex]; 
+		arr[pIndex] = arr[end]; 
+		arr[end] = temp; 
 
-		return i+1; 
+		return pIndex; 
 	} 
 
 
 	/* The main function that implements QuickSort() 
 	arr[] --> Array to be sorted, 
-	low  --> Starting index, 
-	high  --> Ending index */
-	static void quickSort(int arr[], int low, int high) 
+	start  --> Starting index, 
+	end  --> Ending index */
+	static void quickSort(int arr[], int start, int end) 
 	{ 
-		if (low < high) 
+		if (start < end) 
 		{ 
 			/* pi is partitioning index, arr[pi] is  
 			now at right place */
-			int pi = partition(arr, low, high); 
+			int pi = partition(arr, start, end); 
 
 			// Recursively sort elements before 
 			// partition and after partition 
-			quickSort(arr, low, pi-1); 
-			quickSort(arr, pi+1, high); 
+			quickSort(arr, start, pi-1); 
+			quickSort(arr, pi+1, end); 
 		} 
 	} 
 }
