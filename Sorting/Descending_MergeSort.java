@@ -45,7 +45,7 @@ class Descending_MergeSort{
 		
 		//{34 ,32} {36 ,33} 
 		while(i < mid && j < end){
-			tempArr[tempIndex++] = (inputArr[i] <= inputArr[j]) ? inputArr[j++] : inputArr[i++];
+			tempArr[tempIndex++] = (inputArr[i] >= inputArr[j]) ? inputArr[i++] : inputArr[j++];
 		}
 		//If there are elements remaining in the right array they don't need to be copied as that would just overwrite the same data, as their positions would be same.
 		 
