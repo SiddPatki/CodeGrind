@@ -3,7 +3,6 @@ import java.util.*;
 class BubbleSort{
 	private static Scanner sc = new Scanner(System.in);
 	public static void main(String args[]){
-		
 		int size = sc.nextInt();//SIZE OF THE ARRAY
 		
 		int[] array = new int[size];
@@ -14,22 +13,30 @@ class BubbleSort{
 		//ARRAY CREATED
 		sc.close();
 		
-		
+		bubbleSort(array);
+	}
+	
+	public static void bubbleSort(int[] array){
+		int size = array.length;
 		int unsorted_partition_index=size-1;
-		int temp=0;//for swapping
 		while(unsorted_partition_index>=0){
-			
 			for(int  i=0; i<unsorted_partition_index; i++){
-				
 				if(array[i]>array[i+1]){
-					temp=array[i+1];
-					array[i+1]=array[i];
-					array[i]=temp;
+					swap(array,i,i+1);
 				}
 			}
 			unsorted_partition_index--;
 		}
 		System.out.println(Arrays.toString(array));
+
+	}
+	
+	
+	public static void swap(int[] array, int i, int j ){
+		int temp=0;//for swapping
+		temp=array[j];
+		array[j]=array[i];
+		array[i]=temp;
 	}
 }
 
